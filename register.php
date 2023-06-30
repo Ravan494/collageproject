@@ -1,65 +1,125 @@
 <?php
 include 'include/header.php';
+include 'include/navbar.php';
+include 'include/conn.php';
 ?>
-<div class="container mt-4">
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" id="Fname" name="Fname" placeholder="FirstName">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="Lname" name="Lname" placeholder="Last Name">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="phone_no">Phone No</label>
-      <input type="number" class="form-control" id="phone" name="phone" placeholder="phone">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-  <label for="inputPassword4">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-</div>
+
+<body>
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3 logh6"><span>Log In </span><span>Sign Up</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<!-- login form -->
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3 logh4">Log In</h4>
+											<form action="#" method="post">
+											<div class="form-group">
+												<input type="email" class="form-style" placeholder="Email">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" class="form-style" placeholder="Password">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<button class="Loginbtn mt-4" name="login">Login</button>
+                      						<p class="mb-0 mt-4 text-center forget"><a href="https://www.web-leb.com/code" class="link">Forgot your password?</a></p>
+												</form>
+												<button id="check" onclick="checked()">chacked</button>
+				      					</div>
+			      					</div>
+			      				</div>
+
+
+								<!-- sign up form -->
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-3 pb-3 logh4">Sign Up</h4>
+											<form action="" method="post">
+											<div class="form-group">
+												<input type="text" class="form-style" placeholder="Full Name" name="username">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="tel" class="form-style" placeholder="Phone Number" name="phone">
+												<i class="input-icon uil uil-phone"></i>
+											</div>	
+                      						<div class="form-group mt-2">
+												<input type="email" class="form-style" placeholder="Email" name="email">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" class="form-style" placeholder="Password" name="password">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" class="form-style" placeholder="Comform-Password" name="cpassword">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<button class="Registerbtn mt-4" name="signup">Register</button>
+											</form>
+										</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+	<script>
+		const checkbox = document.getElementById('reg-log');
+		function checked()
+{
+  checkbox.checked = true;
+  // window.Location.href='register.php';
+}
+signup.addEventListener('click', () => {
+    checkbox.checked = true; // Check the checkbox
+    console.log('working');
+    window.location.href = 'register.php';
+  });
+  
+  login.addEventListener('click', () => {
+    checkbox.checked = false; // Uncheck the checkbox
+    window.location.href = 'register.php';
+  });
+	</script>
+</body>
+</html>
+
+<?php
+
+if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['signup']))
+{
+	$username = $_POST['username'];
+	$phone=$_POST['phone'];
+	$email= $_POST['email'];
+	$password=$_POST["password"];
+	$cpassword=$_POST["cpassword"];
+
+	if($password==$cpassword)
+	{
+			$sql="INSERT INTO `user` (`Name`, `Email`, `Phone`, `Password`, `DateJoined`) VALUES ('$username', '$email', '$phone', '$password', CURRENT_DATE())";
+			$result=mysqli_query($conn,$sql);
+			if($result)
+			{
+				echo 'user register successfully';
+			}
+	}
+	else
+	{
+		echo "password does not match";
+	}
+
+}
+?>

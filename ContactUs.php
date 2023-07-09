@@ -1,14 +1,57 @@
 <?php
 include 'include/header.php';
-?>
-<?php
 include 'include/navbar.php';
 ?>
+<section class="container-fluid">
+        <h1 class="ch1">CONTACT US</h1> 
+        <div class="heading container">
+            <h2 class="ch2">CREATE A CONNECTION WITH US</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cupiditate laborum reprehenderit repudiandae nemo vitae ipsam consequatur qui ratione incidunt, rem minus dolore pariatur fugiat impedit amet, iure non, quibusdam reiciendis? Enim quas incidunt minima itaque blanditiis nulla dicta qui ad vel magni excepturi quidem ex optio explicabo, obcaecati nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero esse consequuntur accusamus non veniam enim neque.
+            </p>
+            <div class="contact-box">
+                <div class="contact-left">
+                    <form action="">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>NAME :</label>
+                                <input type="text" placeholder="YOUR NAME"  required autocomplete="off">    
+                            </div>
+                            <div class="input-group">
+                                <label>LAST NAME :</label>
+                                <input type="text" placeholder="LAST NAME"  required autocomplete="off">    
+                            </div>
+                        </div>
 
-<body>
-    
-</body>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>EMAIL :</label>
+                                <input type="email" placeholder="YOUR EMAIL"  required autocomplete="off">    
+                            </div>
+                            <div class="input-group">
+                                <label>PHONE NUMBER :</label>
+                                <input type="tel" placeholder="YOUR NUMBER" pattern="[0-9]{10}" required autocomplete="off">    
+                            </div>
+                        </div>
+                        <label>MESSAGE :</label>
+                        <textarea rows="5" placeholder=" YOUR MESSAGE"></textarea>
 
+                        <button type="submit" class="contactbtn">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="contact-right">
+                       <span>HOW TO REACH US</span>
+                       <div>
+                            <img src="images/c1.png" alt="img1">
+                       </div>
+                       <ul type="none">
+                        <li>EMAIL :- jonhjaffer@technolog.in</li>
+                        <li>PHONE :- +91-9743755521</li>
+                        <li>ADDRESS :- Down Town Area Stree-No.45 Plot-No.155/300</li>
+                       </ul>
+                </div>
+            </div>
+        </div>            
+    </section>
 
 <?php
 include 'include/footer.php';

@@ -1,0 +1,110 @@
+
+.ch1{
+    text-align: center;
+    font-size: 3rem;
+    color: gold;
+    font-family:cursive;
+}
+
+.ch2{
+    color: gold;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    font-size: xx-large;
+    font-family: fantasy;
+}
+
+.heading{
+    color: white;
+    text-align: center;
+}
+
+.contact-box{
+    margin: 20px;
+    background: black;
+    display: flex;
+}
+
+.contact-left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.contact-right{
+    flex-basis: 40%;
+    margin: 5px;
+    padding: 40px;
+    color: #fff;
+    background: black;
+    border: 2px solid gold;
+    border-radius: 30% 1%;
+}
+
+.contact-left .input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.contact-left .input-row .input-group{
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-left .input-row .input-group input{
+    padding: 10px 11px 0;
+    border: none;
+    border-bottom: 2px solid gold;
+    background: transparent;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+
+textarea{
+    width: 100%;
+    border: 2px solid gold;
+    margin-bottom: 2rem;           
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    color: white;
+    cursor:gold;
+}
+
+.contact-left label{
+    margin-bottom: 6px;
+    display: block;
+    color: white;
+}
+
+.contactbtn{
+    background: transparent;
+    width: 20%;
+    border: 2px solid gold;
+    font-size:large;
+    border-radius: 55px;
+    outline: none;
+    color:#fff;
+    height: 35px;
+}
+
+.contactbtn:hover{
+    background: rgb(216, 207, 24);
+    font-size: large;
+    text-decoration:underline;
+    cursor: pointer;
+    color: black;
+}
+
+.contact-right span{
+    font-size: xx-large;
+    font-family: cursive;
+}
+
+.contact-right img{
+    width: 100%;
+}

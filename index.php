@@ -1,5 +1,7 @@
 <?php
 include 'include/header.php';
+include 'include/session.php';
+
 ?>
 
 <body>
@@ -7,9 +9,9 @@ include 'include/header.php';
         <?php
         include 'include/navbar.php';
         ?>
-            <title>rent</title>             
+                    
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -17,7 +19,7 @@ include 'include/header.php';
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="images\banner-images\slider-bc-b.jpg" alt="First slide">
+                    <img class="d-block w-100" src="images\banner-images\Black Orange Modern Business Conference SEEK cover images (3).png" alt="First slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="images\banner-images\slider-bc-b.jpg" alt="Second slide">
@@ -34,8 +36,95 @@ include 'include/header.php';
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+        </div> -->
+        <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide active">
+            <img src="images\banner-images\Black Orange Modern Business Conference SEEK cover images (3).png" alt="">
+          </div>
+          <!-- <div class="slide">
+            <img src="images\banner-images\Black Orange Modern Business Conference SEEK cover images (3).png" alt="Image 2">
+          </div> -->
+          <div class="slide">
+            <img src="images\Delicious Food Menu Banner Design.png" alt="Image 2">
+          </div>
         </div>
+        <div class="indicators"></div>
+      </div>
+    
     </div>
+    <script>
+        const carousel = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.slide');
+const indicatorsContainer = document.querySelector('.indicators');
+let currentIndex = 0;
+let timer;
+
+// Show slide based on index
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+  currentIndex = index; // Update currentIndex
+  updateIndicators(index);
+}
+
+// Function to move to the next slide
+function moveToNextSlide() {
+  currentIndex++;
+  if (currentIndex >= slides.length) {
+    currentIndex = 0;
+  }
+  showSlide(currentIndex);
+}
+
+// Create indicators
+function createIndicators() {
+  slides.forEach((_, index) => {
+    const indicator = document.createElement('div');
+    indicator.classList.add('indicator');
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+      clearInterval(timer);
+      startAutoScroll();
+    });
+    indicatorsContainer.appendChild(indicator);
+  });
+}
+
+// Update active indicator
+function updateIndicators(index) {
+  const indicators = document.querySelectorAll('.indicator');
+  indicators.forEach((indicator, i) => {
+    if (i === index) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+}
+
+// Function to start the auto-scrolling
+function startAutoScroll() {
+  timer = setInterval(moveToNextSlide, 3000); // Change slide every 3 seconds (adjust as needed)
+}
+
+// Function to stop the auto-scrolling
+function stopAutoScroll() {
+  clearInterval(timer);
+}
+
+// Show initial slide, create indicators, and start auto-scrolling
+showSlide(currentIndex);
+createIndicators();
+startAutoScroll();
+
+    </script>
     <section class="Product">
         <div class="section-heading">
                 <h1>Products</h1>
@@ -44,7 +133,7 @@ include 'include/header.php';
             <div class="col">
                 <div class="Product">
                     <div class="product-image">
-                        <img src="https://dummyimage.com/280x250/8f8d8f/101014.jpg" alt="First slide">
+                        <img src="images\product\552884.webp" alt="First slide">
                     </div>
                     <div class="product-body">
                         <h4>Product name</h4>
@@ -57,7 +146,7 @@ include 'include/header.php';
             <div class="col">
                 <div class="Product">
                     <div class="product-image">
-                        <img src="https://dummyimage.com/280x250/8f8d8f/101014.jpg" alt="First slide">
+                        <img src="images\product\car 1.png" alt="First slide">
                     </div>
                     <div class="product-body">
                         <h4>Product name</h4>
@@ -69,7 +158,7 @@ include 'include/header.php';
             <div class="col">
                 <div class="Product">
                     <div class="product-image">
-                        <img src="https://dummyimage.com/280x250/8f8d8f/101014.jpg" alt="First slide">
+                        <img src="images\product\musics.jpg" alt="First slide">
                     </div>
                     <div class="product-body">
                         <h4>Product name</h4>
@@ -82,7 +171,7 @@ include 'include/header.php';
         <div class="col">
                 <div class="Product">
                     <div class="product-image">
-                        <img src="https://dummyimage.com/280x250/8f8d8f/101014.jpg" alt="First slide">
+                        <img src="images\product\phone.jpg" alt="First slide">
                     </div>
                     <div class="product-body">
                         <h4>Product name</h4>
@@ -131,20 +220,11 @@ include 'include/header.php';
     </center>
 <?php
 include 'include/footer.php';
+include 'include/script.php';
+
 ?>
-        <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-        <script src="css\dist\js\bootstrap.js"></script>
-        <!-- <script src="css\dist\js\bootstrap.min.js"></script> -->
+
+
 </body>
 
 </html>

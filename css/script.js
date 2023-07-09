@@ -2,16 +2,16 @@
 
 
 // Retrieve the buttons from the first page
-const login = document.getElementById('login-btn');
-const signup = document.getElementById('signup-btn');
+const checkbox = document.getElementById('reg-log');
+const check = document.getElementById('check');
 
-signup.addEventListener('click', () => {
+check.addEventListener('click', () => {
     checkbox.checked = true; // Check the checkbox
-    console.log('working');
-    window.location.href = 'register.php';
+    // console.log('working');
+    // window.location.href = 'register.php';
   });
   
-  login.addEventListener('click', () => {
-    checkbox.checked = false; // Uncheck the checkbox
-    window.location.href = 'register.php';
-  });
+  // login.addEventListener('click', () => {
+  //   checkbox.checked = false; // Uncheck the checkbox
+  //   window.location.href = 'register.php';
+  // });

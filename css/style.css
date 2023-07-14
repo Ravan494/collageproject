@@ -84,17 +84,19 @@ hr.divider
 
 
 /* navbar */
+
 .logo
 {
   width: 48px;
 }
 .search,
-.login-btn
+.login-btn,.profilebtn
 {
   color: gold;
   margin: 0 8px;
   box-sizing: border-box;
-
+  border: none !important;
+  background: transparent !important;
 }
 .login-btn:hover, .search:hover
 {
@@ -105,6 +107,40 @@ hr.divider
 {
     color:black;
 }  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+.navbar li:hover .dropdown-content {
+  display: block;
+}
+.nav-link:hover {
+  color: gold !important;
+}
+.custom-menu {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.dropdown-toggle-split {
+  right: -100%;
+  padding-right: 0.5625rem;
+  padding-left: 0.5625rem;
+  top: 0;
+  left: 100%;
+}
+
+
 
 
 
@@ -153,6 +189,80 @@ section.Product {
     width: 100%;
     height: 12vh;
 }
+
+
+
+
+
+
+/* -----------Product_Upload_form---------- */
+.form-container {
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: black;
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .form-group {
+  margin-bottom: 20px;
+}
+.form-container
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: gold;
+}
+.form-container
+.form-group input,
+.form-container
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  border-bottom: 2px solid gold;
+  outline: none;
+  background: transparent;
+}
+.form-container
+.form-group .gold {
+  width: 100%;
+  background-color: gold;
+  color: black;
+  cursor: pointer;
+}
+.form-container
+.form-group .gold:hover{
+  background: black;
+  font-size: medium;
+  color: gold;
+  text-decoration: underline;
+  border: 1px solid gold;  
+}
+
+/* newly added css for decoration  */
+.form-container
+center h2{
+   color: gold;
+}
+.form-container
+form textarea{
+  border: 1px solid gold !important;
+}
+.form-container
+.rentavl{
+  display: block !important;
+  background: white !important;
+  padding: 5px;
+}
+
+
 
 
 
@@ -252,7 +362,8 @@ display: none;
   width: 100%;
   height: 100%;
   background-color: #2b2e38;
-  background-image: url('../images/2b5f77fd2aaeeaed3cb9ef71370ef650.jpg');
+  background-image: url('../images/1.jpg');
+  background-size: contain;
   position: absolute;
   border-radius: 6px;
   transform-style: preserve-3d;
@@ -457,7 +568,7 @@ img.second {
 }
 .about-img-sec{
   position: relative;
-  width: 50%;
+  width: 30%;
 
 }
 img.A-first{
@@ -478,6 +589,17 @@ button.Second-btn{
   margin: 0 11rem;
 
 }
+img.sec-img {
+  width: 90%;
+  border-radius: 19rem 46rem 10rem 49rem;
+}
+.about-main-second .about-contant {
+  width: 70%;
+}
+.about-img-sec img {
+  width: 100%;
+}
+
 
 /* card start  */
 
@@ -790,6 +912,75 @@ hr {
 }
 
 /* rtl:end:remove */
+
+
+     /* Profile */
+
+.userimg
+{
+  width: 80%;
+}
+.userdata
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* ---------Category Page------------- */
+.product-card {
+  max-width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.product-img {
+  width: 100% !important;
+  margin: 0 !important;
+  height: auto;
+}
+.product-card h3 {
+  margin-bottom: 5px;
+}
+.product-card p {
+  margin-bottom: 10px;
+}
+.product-card .price {
+  font-weight: bold;
+}
+.product-card .condition {
+  color: #888;
+}
+.product-card .rent-info {
+  color: #888;
+  font-size: 14px;
+}
+.product-card span {
+display: flex;
+justify-content: space-between;
+}
+.product-view {
+background: transparent;
+border: 2px solid gold;
+color: gold;
+}
+.product-view:hover {
+background: gold;
+color: black;
+}
+
+
+
+
+
+
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

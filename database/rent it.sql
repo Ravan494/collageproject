@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 03:41 PM
+-- Generation Time: Jul 14, 2023 at 08:37 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `olx`
+-- Database: `rent it`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,18 @@ CREATE TABLE `category` (
   `ParentCategoryID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`CategoryID`, `Name`, `Description`, `ParentCategoryID`) VALUES
+(1, 'Electronics', 'Electronics category', NULL),
+(2, 'Clothing', 'Clothing category', NULL),
+(3, 'Books', 'Books category', NULL),
+(4, 'Laptops', 'Laptops category', 1),
+(5, 'T-Shirts', 'T-Shirts category', 2),
+(6, 'Coding Books', 'Coding Books category', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -43,7 +55,7 @@ CREATE TABLE `category` (
 CREATE TABLE `product` (
   `ProductID` int(11) NOT NULL,
   `Title` varchar(50) DEFAULT NULL,
-  `Description` text DEFAULT NULL,
+  `Description1` text DEFAULT NULL,
   `SalePrice` decimal(10,2) DEFAULT NULL,
   `Condition1` varchar(20) DEFAULT NULL,
   `Image1` varchar(100) DEFAULT NULL,
@@ -54,6 +66,13 @@ CREATE TABLE `product` (
   `RentDuration` int(11) DEFAULT NULL,
   `AvailableForRent` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`ProductID`, `Title`, `Description1`, `SalePrice`, `Condition1`, `Image1`, `DatePosted`, `UID`, `CategoryID`, `RentPrice`, `RentDuration`, `AvailableForRent`) VALUES
+(1, 'mac book', 'fast and best for professional work', '1999.00', 'used', 'dell-xps-15-9560.jpg', '2023-07-12', 7, 4, '100.00', 60, 1);
 
 -- --------------------------------------------------------
 
@@ -108,7 +127,14 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`UserID`, `Name`, `Email`, `Phone`, `Password`, `DateJoined`) VALUES
 (1, 'mustfa', 'adsfwks@gmail.com', '1213432', '1234', '2023-06-28'),
 (2, 'mustfa', 'm@gmail.com', '8209470172', '1234', '2023-06-29'),
-(5, '', '', '', '', '2023-06-30');
+(5, '', '', '', '', '2023-06-30'),
+(7, 'mustfa  ', 'mg@gmail.com ', '987654321 ', '1234 ', '2023-07-01'),
+(8, 'admin', 'admin@gmail.com', '9876543210', '1234', '2023-07-08'),
+(9, 'gourav', 'g@gmail.com', '9076694464', '1234', '2023-07-08'),
+(10, 'gourav', 'g21@gmail.com', '9079694464', '1234', '2023-07-08'),
+(11, 'don', 'd@gmail.com', '7777777777', '1234', '2023-07-08'),
+(12, 'mustfa', 'ma@gmail.com', '9999999999', '1234', '2023-07-08'),
+(13, 'mustfa', 'm3@gmail.om', '8888888888', '1234', '2023-07-10');
 
 --
 -- Indexes for dumped tables
@@ -160,38 +186,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `category`
---
-ALTER TABLE `category`
-  ADD CONSTRAINT `category_ibfk_1` FOREIGN KEY (`ParentCategoryID`) REFERENCES `category` (`CategoryID`);
-
---
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
-
---
--- Constraints for table `rent`
---
-ALTER TABLE `rent`
-  ADD CONSTRAINT `rent_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`);
-
---
--- Constraints for table `sale`
---
-ALTER TABLE `sale`
-  ADD CONSTRAINT `sale_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`);
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

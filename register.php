@@ -55,22 +55,31 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['login']))
 {	
 	try
 	{
-	$user = $_POST['user'];
+	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$sqlemail="SELECT * FROM `user` WHERE `Email` LIKE '$user' AND `Password` LIKE '$password'";
-	$sqlnumber="SELECT * FROM `user` WHERE `Phone` LIKE '$user' AND `Password` LIKE '$password'";
-	if(mysqli_query($conn,$sqlemail) OR mysqli_query($conn,$sqlnumber))
+	$sqlemail="SELECT * FROM `user` WHERE `Email` LIKE '$email' AND `Password` LIKE '$password'";
+	$result=mysqli_query($conn,$sqlemail);
+	$num=mysqli_num_rows($result);
+	if($num==1)
 	{
+		$row=mysqli_fetch_assoc($result);
+        $_SESSION['user_id']=$row['UserID'];
+        $_SESSION['user_name']=$row['Name'];
+        $_SESSION['user_email']=$row['Email'];
+		$_SESSION['user_phone']=$row['Phone'];
 		// echo "<script>
 		// window.location.href = 'index.php';
 		// </script>";
 		$_SESSION['loggedin'] = true;
-		$message="You have successfully logged in";
+		
+		$message="You have successfully logged in ";
 		$_SESSION['message']=$message;
 	}
 	else
 	{
-
+		$message="Inviled values";
+		$_SESSION['message']=$message;
+		
 		throw new Exception("Invalid values");
 	}
 }
@@ -143,7 +152,7 @@ echo '<div class="section">
 											<h4 class="mb-4 logh4">Log In</h4>
 											<form action="#" method="post">
 											<div class="form-group">
-												<input type="text" class="form-style" name="user" placeholder="Email or Phone-no" id="user">
+												<input type="text" class="form-style" name="email" placeholder="Email" id="user">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">

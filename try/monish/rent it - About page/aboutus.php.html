@@ -1,10 +1,21 @@
-<?php
-include 'include/session.php';
-include 'include/header.php';
-include 'include/navbar.php';
+<!doctype html>
+<html lang="en">
 
-?>
-<div class="about-main">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About US</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+  
+
+    <!-- start  about  First  contant -->
+
+    <div class="about-main">
         <div class="about-contant">
             <!-- <h4 class="heading">Hi , It's Me</h4> -->
             <h2 class="main-head">I'm <span class="ab-head-color"> RENT IT</span></h2>
@@ -23,7 +34,7 @@ include 'include/navbar.php';
         <div class="about-img">
             <!-- <img src="dddw-min.png" alt="" class="first">
             <img src="ddd-min.png" alt="" class="second"> -->
-            <img class="sec-img" src="images\sec.about.jpg" alt="">
+            <img class="sec-img" src="sec.about.jpg" alt="">
         </div>
     </div>
 
@@ -48,8 +59,8 @@ include 'include/navbar.php';
 
 
         <div class="about-img-sec">
-            <img src="images\dddw-min.png" alt="" class="A-first">
-            <img src="images\ddd-min.png" alt="" class="B-second">
+            <img src="dddw-min.png" alt="" class="A-first">
+            <img src="ddd-min.png" alt="" class="B-second">
            
         </div>
     </div>
@@ -68,7 +79,7 @@ include 'include/navbar.php';
 
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images\icon-first.svg" alt="Card image cap">
+            <img class="card-img-top" src="icon-first.svg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Fast Deliverd</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -78,7 +89,7 @@ include 'include/navbar.php';
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images\icon-sec.svg" alt="Card image cap">
+            <img class="card-img-top" src="icon-sec.svg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Best Performance</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -88,7 +99,7 @@ include 'include/navbar.php';
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images\icon-third.svg" alt="Card image cap">
+            <img class="card-img-top" src="icon-third.svg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Easy Return</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -167,9 +178,34 @@ include 'include/navbar.php';
 
     </div>
 
-    <?php
 
-    include 'include/footer.php';
-    include 'include/script.php';
-    ?>
-    
+    <!-- End Testimonilas    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+
+
+
+
+
+        </script>
+    <script>const testimonialPage = document.querySelector(".quotes-slide[data-slider-slide-index='1']");
+        testimonialPage.classList.add("quotes-slide--active");
+
+
+        document.querySelector(".quotes").addEventListener("mouseout", function () {
+            document.querySelector(".quotes-slide--active").classList.remove("quotes-slide--active")
+            document.querySelector(".quotes-slide[data-slider-slide-index='1']").classList.add("quotes-slide--active")
+        });
+
+
+        document.querySelectorAll(".quotes-slide").forEach(
+            elem => elem.addEventListener("mouseover", function () {
+                document.querySelector(".quotes-slide--active").classList.remove("quotes-slide--active")
+                this.classList.add("quotes-slide--active")
+            })
+        )</script>
+
+</body>
+
+</html>

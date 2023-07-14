@@ -1,4 +1,5 @@
 <?php
+include 'include/session.php';
 include 'include/header.php';
 include 'include/navbar.php';
 ?>
@@ -6,8 +7,6 @@ include 'include/navbar.php';
         <h1 class="ch1">CONTACT US</h1> 
         <div class="heading container">
             <h2 class="ch2">CREATE A CONNECTION WITH US</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cupiditate laborum reprehenderit repudiandae nemo vitae ipsam consequatur qui ratione incidunt, rem minus dolore pariatur fugiat impedit amet, iure non, quibusdam reiciendis? Enim quas incidunt minima itaque blanditiis nulla dicta qui ad vel magni excepturi quidem ex optio explicabo, obcaecati nostrum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic libero esse consequuntur accusamus non veniam enim neque.
-            </p>
             <div class="contact-box">
                 <div class="contact-left">
                     <form action="">
@@ -55,4 +54,5 @@ include 'include/navbar.php';
 
 <?php
 include 'include/footer.php';
+include 'include/script.php';
 ?>

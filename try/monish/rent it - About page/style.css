@@ -1,0 +1,266 @@
+body {
+    background: black !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-main {
+    display: flex;
+    margin: 3rem 5rem;
+}
+
+.about-contant {
+    width: 50%;
+}
+
+h4.heading {
+    font-family: serif;
+    font-size: 20px;
+    color: white;
+
+}
+
+span.ab-sec-head-co {
+    color: gold;
+    font-size: 42px;
+    font-family: cursive;
+    font-style: italic;
+}
+
+span.ab-head-color {
+    color: gold;
+    font-family: cursive;
+    font-style: italic;
+}
+
+h2.main-head {
+    font-size: 40px;
+    color: white;
+
+}
+
+p.para {
+    font-size: 18px;
+    font-style: initial;
+    color: white;
+    padding: 1rem 0;
+
+}
+
+
+
+.about-img {
+    position: relative;
+    /* display: initial; */
+    align-items: \\;
+    /* left: 30%; */
+    text-align: center;
+    width: 50%;
+}
+
+img.first {
+    width: 80%;
+    position: absolute;
+}
+
+img.second {
+    width: 80%;
+}
+
+
+.about-main-second {
+    display: flex;
+    margin: 3rem 5rem;
+    flex-direction: row-reverse;
+
+}
+
+.about-img-sec {
+    position: relative;
+    width: 50%;
+
+}
+
+img.A-first {
+    width: 80%;
+    position: absolute;
+
+}
+
+img.B-second {
+    width: 80%;
+}
+
+
+img.sec-img {
+    width: 90%;
+    border-radius: 19rem 46rem 10rem 49rem;
+}
+
+/* card start  */
+
+span.sp-services {
+    color: gold;
+    font-family: cursive;
+    font-style: italic;
+}
+
+
+h2.cards-heading {
+    color: white;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.main-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin: 0 3rem;
+    background: black !important;
+    padding: 10px;
+
+}
+
+.card {
+
+    border-radius: 10px;
+}
+
+img.card-img-top {
+    width: 24%;
+    margin: 0 7rem;
+}
+
+.card-body {
+    color: white !important;
+}
+
+h5.card-title {
+    text-align: center;
+}
+
+.card:hover {
+    border-color: gold !important;
+
+}
+
+p.card-text {
+    text-align: center;
+}
+
+button.card-btn {
+    border: gold;
+    background: transparent;
+    color: white;
+    border: 2px solid gold;
+    border-radius: 21px;
+    padding: 0.55rem 2rem;
+    cursor: pointer;
+}
+
+button.card-btn:hover {
+    background-color: gold;
+    color: black;
+
+}
+
+h2.test-head {
+    text-align: center;
+    margin: 4rem 0 0 0;
+    color: white;
+}
+
+span.tes-head-co {
+    color: gold;
+    font-family: cursive;
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page-width {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.quotes {
+    display: flex;
+    padding: 0rem 2rem !important;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.quotes-slide {
+    width: 33%;
+    padding: 3rem;
+    background-color: black;
+    opacity: .4;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1px #d5d5d5;
+    line-height: 1.75;
+    font-family: 'Roboto', sans-serif;
+    transition: all .5s ease;
+    outline: none;
+    border-radius: 10px;
+}
+
+.quotes-slide--active {
+    transform: scale(1.2);
+    z-index: 10;
+    opacity: 1;
+    border: none;
+    box-shadow: 1px 0px 10px 5px #eaeaea;
+    color: #222222;
+}
+
+blockquote {
+    margin: 0;
+}
+
+cite {
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: .9rem;
+    color: white;
+}
+
+cite::before {
+    content: '\2014 \0020';
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    fill: #1a73e8;
+}
+
+.content {
+    color: white;
+}
+
+h4.heading-sec {
+    color: white;
+    font-size: 40px;
+}
+
+
+
+/* nav bar  */
+
+h4.heading-sec {
+    color: white;
+    font-size: 40px;
+}

@@ -20,7 +20,7 @@ echo '<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
      ';
      echo '<li class="dropdown nav-item">';
      echo '<a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-     Category
+     first
    </a>
    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">';
         // Fetch parent categories from the database
@@ -36,10 +36,10 @@ echo '<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             
             echo '<li>
             <div class="dropdown-item btn-group dropend">
-                <a class="dropdown-second dropdown-toggle disabled" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-second dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 ' . $parentCategoryName . '
                 </a>
-                <ul class="dropdown-submenu" type="none">';
+                <ul class="dropdown-submenu">';
             
             // Fetch subcategories for the parent category
             $subcategoriesSql = "SELECT * FROM Category WHERE ParentCategoryID = $parentCategoryId";
@@ -50,7 +50,7 @@ echo '<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 while ($subcategoryRow = mysqli_fetch_assoc($subcategoriesResult)) {
                     $subcategoryName = $subcategoryRow['Name'];
                     
-                    echo '<li><a class="dropdown-item" href="category.php?category='. $subcategoryName .'">' . $subcategoryName . '</a></li>';
+                    echo '<li><a class="dropdown-item" href=""category.php?category='. $subcategoryName .'">' . $subcategoryName . '</a></li>';
                 }
                 echo '</ul>';
                 echo '</div>';
@@ -78,12 +78,12 @@ echo '<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         if(isset($_SESSION['loggedin']) || isset($_SESSION['admin']))
                 {
                   if(isset($_SESSION['loggedin'])){
-                      echo '<div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle profilebtn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      echo '<div class="dropdown ">
+                      <button class="btn btn-secondary dropdown-toggle profilebtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Profile
                         </button>
                       
-                      <div class="dropdown-menu profile" aria-labelledby="dropdownMenuButton2">
+                      <div class="dropdown-menu profile" aria-labelledby="dropdownMenuButton1">
                   <a href="profile.php" class="dropdown-item btn xl-2">My Profile</a>
                   <a class="dropdown-item" href="#">Your Product</a>
                   </div>';

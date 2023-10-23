@@ -1,0 +1,420 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --primary-bg-color: #1c1f22;
+    --white-color: #fff;
+    --black-color:#000;
+    --gold-color:gold;
+
+}
+ 
+body
+{
+    background-color: var(--primary-bg-color);
+    color: var(--white-color);
+}
+
+/* dashboard */
+
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+.dashboard{
+    display: flex;
+}
+
+.left-sec{
+    width: auto;
+    background: black;
+    border-right: 1px solid var(--gold-color);
+    box-shadow: 0px 0px 10px 2px var(--gold-color) !important;
+    height: 100vh;
+    position: fixed;
+}
+
+.right-sec{
+    width: 100%;
+    height: 100vh;
+    background: #1c1f22;
+    margin-left: 18%;
+}
+
+.left-sec img{
+    margin: 0px 60px;
+    height: 170px !important;
+    width: auto;
+}
+
+.left-sec li{
+    color: white !important;
+    /* margin-top: 20px;
+    margin-left: 65px;
+    margin-bottom: 35px; */
+    margin: 0 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.left-sec ul{
+    padding: 10px 0px;
+    margin: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+.left-sec li a{
+    color: white;
+    text-decoration: none;
+    border-color: gold;
+    letter-spacing: 1.5px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.left-sec li a:hover{
+    border: 1px solid gold;
+    border-radius: 5px;
+    color: gold;
+    
+}
+.left-sec .dashboard-logo
+{
+    margin: 10px 20% ;
+    text-align: center;
+    color: gold;
+}
+.left-sec .dashboard-logo:hover
+{
+    text-shadow: 0 0 10px gold ; 
+}
+.heads
+{
+    color:gold;
+    font-family: cursive;
+    font-weight: 900;
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 10px;
+}
+
+.dashboard-home{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 30px;
+}
+
+.cimgs{
+    background: url("ci3.jpg");
+    background: url("../images/ci3.jpg");
+}
+
+.cimgs div{
+    font-size: xx-large;
+}
+
+ .card{
+    color: white;
+    border: 1px solid white;
+    border-right-color: gold ;
+    border-top-color: gold ;
+}
+
+
+.card:hover{
+    box-shadow: 0px 0px 10px 3px gold;
+}
+
+.dashboard hr{
+  height: 5px !important;
+  color: var(--gold-color) !important;
+  opacity: 1;
+}
+.view-them
+{
+    font-size: large;
+}
+
+/* .gimg img{
+    background-color: lightyellow !important;
+    width: auto;
+    height: 500px;
+} */
+
+
+
+
+/* ******************* product page ***************** */
+.product-show ,.user_show
+{
+    padding: 2rem;
+    margin-left: 18%;
+}
+.heading
+{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-show .heading h1
+{
+    width: 90%;
+}
+.heading button
+{
+    width: 10%;
+    background-color: transparent;
+    border: 2px solid var(--gold-color);
+    border-radius: 18px;
+    color: var(--gold-color);
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.product-category
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.product-category button
+{
+    padding: 10px;
+    background-color: transparent;
+    color: var(--gold-color);
+    /* border-color: var(--gold-color); */
+}
+#myTable_wrapper #myTable_length label select
+{
+    background-color: #000 !important;
+}
+table tr td .tablebtn
+{
+    padding: 10px 20px;
+    color: gold;
+    background-color: transparent;
+    border: 2px solid gold;
+    border-radius: 15px;
+}
+.tablebtn:hover
+{
+    border-color: gold;
+    background-color: #000;
+    color: gold;
+}
+.product-table #myTable tbody tr td img
+{
+    width: 2.5rem !important;
+}
+
+/* product upload */
+.forms
+{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top: 0;
+    z-index: 10;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.form-container {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    height:fit-content ;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    border: 2px solid gold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: gold;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    border-bottom: 2px solid gold;
+    outline: none;
+    background: transparent;
+}
+
+.form-group input[type="submit"] {
+    border: 2px solid gold;
+    background-color: gold;
+    color: black;
+    font-size: medium;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.form-group input[type="submit"]:hover{
+    background: black;
+    color: gold;
+    text-decoration: underline;
+    border: 2px solid gold ;  
+}
+
+/* product-edit */
+.form-row
+{
+    display: flex;
+    gap: 20px;
+}
+.form-row .form-group
+{
+    max-width: 210px;
+}
+
+/* newly added css for decoration  */
+center h2{
+     color: gold;
+}
+
+form textarea{
+    border: 1px solid gold !important;
+}
+
+.rentavl{
+    display: block;
+    background: white !important;
+    padding: 5px;
+}
+.forms .form-container
+{
+    position: relative;
+}
+#hide
+{
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    font-size: xx-large;
+    border: none;
+    top: 0;
+    right: 10px;
+}
+
+/* modal  */
+.modal-body,.modal-title
+{
+    color: black;
+}
+
+/* alert css */
+.login-alert,.sign-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    z-index: 9990;
+  }
+  .alert-body {
+    box-shadow: 5px 3px 30px gold;
+    margin: 2rem 0 0;
+    border: 2px solid gold;
+    padding: 2rem;
+    position: relative;
+    background: black;
+    border-radius: 19px;
+  }
+  .alert-body button {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    color: white;
+    background: transparent;
+    border: none;
+    width: 20px;
+    font-size: 20px;
+  }
+  
+
+/* product edit */
+.form-edit
+{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top: 0;
+    z-index: 10;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: none; */
+}
+#edit_hide
+{
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    font-size: xx-large;
+    border: none;
+    top: 0;
+    right: 10px;
+}
+.buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.buttons .btn
+{
+    border: 2px solid gold;
+    background-color: gold;
+    color: black;
+    font-size: medium;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.buttons .btn:hover
+{
+    background: black;
+    color: gold;
+    text-decoration: underline;
+    border: 2px solid gold ;  
+}
+.pull-right {
+    float: right!important;
+}
+
+/* user table */
+.user_show .heading h1
+{
+    width: 80%;
+}

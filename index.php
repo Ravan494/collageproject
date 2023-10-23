@@ -1,7 +1,6 @@
 <?php
-include 'include/header.php';
 include 'include/session.php';
-
+include 'include/header.php';
 ?>
 
 <body>
@@ -9,7 +8,7 @@ include 'include/session.php';
         <?php
         include 'include/navbar.php';
         ?>
-                    
+        
 
         <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -125,92 +124,78 @@ createIndicators();
 startAutoScroll();
 
     </script>
-    <section class="Product">
-        <div class="section-heading">
-                <h1>Products</h1>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="Product">
-                    <div class="product-image">
-                        <img src="images\product\552884.webp" alt="First slide">
-                    </div>
-                    <div class="product-body">
-                        <h4>Product name</h4>
-                        <p>Product description</p>
-                    </div>
-                </div>
-            </div>
+<section class="Product-section">
+  <div class="section-heading">
+    <h1>Products</h1>
+  </div>
+  <div class='row row-cols-3 d-grid mx-5'>
+
+    <a href='#' class='col card product-card'>
+      <img class='card-img-top product-img' src='images/product/dell-xps-15-9560.jpg' alt='Card image cap'>
+      <div class='card-body'>
+        <h4 class='card-title'>Title</h4>
+        <p class='card-text'>"Description1"</p>
+      </div>
+    </a>
 
             
-            <div class="col">
-                <div class="Product">
-                    <div class="product-image">
-                        <img src="images\product\car 1.png" alt="First slide">
-                    </div>
-                    <div class="product-body">
-                        <h4>Product name</h4>
-                        <p>Product description</p>
-                    </div>
-                </div>
-            </div>
+    <a href='#' class='col card product-card'>
+        
+      <img class='card-img-top product-img' src='images/product/bmw.jpg' alt='Card image cap'>
+      <div class='card-body'>
+        <h4 class='card-title'>Title</h4>
+        <p class='card-text'>"Description1"</p>
+      </div>
+    </a>
 
-            <div class="col">
-                <div class="Product">
-                    <div class="product-image">
-                        <img src="images\product\musics.jpg" alt="First slide">
-                    </div>
-                    <div class="product-body">
-                        <h4>Product name</h4>
-                        <p>Product description</p>
-                    </div>
-                </div>
-            </div>
+    <a href='#' class='col card product-card'>
+            
+      <img class='card-img-top product-img' src='images/product/WhatsApp Image 2023-08-24 at 4.42.25 PM.jpeg' alt='Card image cap'>
+      <div class='card-body'>
+        <h4 class='card-title'>Title</h4>
+        <p class='card-text'>"Description1"</p>
+      </div>
+    </a>
         
         
-        <div class="col">
-                <div class="Product">
-                    <div class="product-image">
-                        <img src="images\product\phone.jpg" alt="First slide">
-                    </div>
-                    <div class="product-body">
-                        <h4>Product name</h4>
-                        <p>Product description</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="more">
-            <h3>View More</h3>
-        </div>
+    <a href='#' class='col card product-card'>
+            
+      <img class='card-img-top product-img' src='images/product/product-jpeg.jpg' alt='Card image cap'>
+      <div class='card-body'>
+        <h4 class='card-title'>Title</h4>
+        <p class='card-text'>"Description1"</p>
+      </div>
+    </a>
+  </div>
 
-        
+  <div class="more">
+    <h3>View More</h3>
+  </div>
 
-    </section>
+</section>
     <center>
     <hr class="divider">
     </center>
     <div class="container">
-    <div class="row featurette">
+    <div class="row featurette my-5">
       <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
         <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
       </div>
       <div class="col-md-5">
-      <img class="d-block w-100" src="https://dummyimage.com/400x400/a1a1a1/000000" alt="400*400" >
+      <img class="d-block w-100" src="images/zig.jpeg" alt="400*400" >
       </div>
     </div>
     <!-- <center>
     <hr class="divider">
     </center> -->
-    <div class="row featurette">
+    <div class="row featurette my-5">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="d-block w-100" src="https://dummyimage.com/400x400/a1a1a1/000000" alt="400*400">
+        <img class="d-block w-100" src="images/zag.jpeg" alt="400*400">
       </div>
     </div>
     
@@ -218,13 +203,12 @@ startAutoScroll();
 <center>
     <hr class="divider">
     </center>
+
 <?php
 include 'include/footer.php';
 include 'include/script.php';
-
 ?>
 
 
 </body>
-
 </html>

@@ -3,19 +3,7 @@ include 'include/session.php';
 
 include 'include/header.php';
 include 'include/navbar.php';
-if (isset($_SESSION['loggedin'])) 
-{
-	$user=$_SESSION['user_email'];
-	$usersql="SELECT * FROM `user` WHERE `Email` = '$user'";
-	$result=mysqli_query($conn,$usersql);
-	if(mysqli_num_rows($result)>0)
-	{
-		
-			$user_data=mysqli_fetch_assoc($result);
-		
-	}
-}
-else
+if (!isset($_SESSION['loggedin'])) 
 {
     header('location: register.php');
 }
@@ -58,12 +46,12 @@ else
 	        							<h4>Member Since:</h4>
 	        						</div>
 	        						<div class="col-sm-6">
-	        							<h4 class="h4"><?php echo $user_data['Name'] ?>
+	        							<h4 class="h4"><?php echo $user['Name'] ?>
 	        								
 	        							</h4>
-	        							<h4><?php echo $user_data['Email']; ?></h4>
-	        							<h4><?php echo $user_data['Phone']; ?></h4>
-	        							<h4><?php echo date('M d, Y', strtotime($user_data['DateJoined'])); ?></h4>
+	        							<h4><?php echo $user['Email']; ?></h4>
+	        							<h4><?php echo $user['Phone']; ?></h4>
+	        							<h4><?php echo date('M d, Y', strtotime($user['DateJoined'])); ?></h4>
 										<span class="pull">
 	        									<a href="profile_edit.php" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
 	        								</span>
@@ -125,3 +113,6 @@ else
 	        	</div>
 
 </div>
+<?php
+include 'include/script.php';
+?>

@@ -1,112 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Profile Edit Form</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
     <style>
-        /* Add your CSS styling here */
-        body {
-            font-family: Arial, sans-serif;
-            background: #1c1f22;
-        }
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid gold;
-            border-radius: 5px;
-            background-color: black;
-        }
-        .form-container h2 {
-            text-align: center;
-            color: gold;
-        }
-        .form-group {
-            margin-top: 50px;
-            margin-bottom: 20px;
-            margin-right: 15px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: gold;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            outline: none;
-            border: none;
-            border-radius: 5px;
-            border-bottom: 2px solid gold !important;
-            background: transparent;
-            color: white;
-        }
-        .form-group button {
-            padding: 10px 20px;
-            background-color: gold;
-            color: black;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
-            font-size: medium;
-        }
-        .form-group button:hover {
-            background-color: black;
-            color: gold;
-            text-decoration: underline;
-            border: 1px solid gold;
-        }
-    </style>
-</head>
-<body>
-    <?php
-    // Assume you have fetched the user data to pre-fill the form
-    // You can modify the code below to suit your data retrieval logic
+    /* Custom CSS for second-level dropdown */
+   
 
-    // Example data (replace it with your actual data retrieval logic)
-    // $userID = 1; // ID of the user to edit
+    .dropdown-submenu 
+    {
+     display: none;
+    } 
+    /* .btn-group.dropend:hover > .dropdown-submenu
+    {
+      color: red;
+    } */
+    .dropdown-item:hover > .dropdown-submenu
+    {
+      display: block;
+      position: absolute;
+    left: 100%;
+    list-style-type: decimal;
+    background: white;
+    border: 1px solid black;
+    z-index: 100;
+    }
 
-    // Fetch the user data from the database
-    // Assuming you have a function to retrieve user data by ID
-    // $userData = getUserByID($userID);
-
-    // Check if user data exists
-    // if ($userData) {
-    ?>
-        <div class="form-container">
-            <h2>PROFILE EDIT</h2>
-            <form action="profile-edit.php" method="POST">
-                <input type="hidden" name="userID" value="<?php echo $userData['UserID']; ?>">
-                <div class="form-group">
-                    <label for="Name">Name :</label>
-                    <input type="text" name="Name" id="Name" placeholder="Name" autocomplete="off" value="<?php echo $userData['Name']; ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" value="<?php echo $userData['Email']; ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone :</label>
-                    <input type="tel" name="phone" id="phone" placeholder="Phone" autocomplete="off" value="<?php echo $userData['Phone']; ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" placeholder="Password" autocomplete="off" id="password" required>
-                </div>
-                <div class="form-group">
-                    <center><button type="submit">Update Profile</button></center>
-                </div>
-            </form>
+  </style>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <div class="container mt-5">
+    <div class="dropdown">
+  <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    first
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li>
+        <div class="dropdown-item btn-group dropend">
+            <a class="dropdown-second dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                second
+            </a>
+            <ul class="dropdown-submenu">
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
         </div>
-    <?php
-    // } else {
-    //     // Display a message if user data is not found
-    //     echo '<p>User not found.</p>';
-    // }
-    ?>
-</body>
+    </li>
+    <li><a class="dropdown-item" href="#">Something else here</a></>
+  </ul>
+</div>
+  </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
+

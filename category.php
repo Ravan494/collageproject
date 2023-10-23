@@ -30,6 +30,12 @@ include 'include/navbar.php';
     // $product_category=$product['CategoryID'];
     // Loop through the products and display them
     if (mysqli_num_rows($productresult) > 0) {
+        $ins = 3;
+        echo "<header class='mb-5'>
+        <h1>".$product_category."</h1>
+    </header>
+    <div class='container category-page-container my-5'>
+    <div class='row row-cols-3 d-grid'>";
         while($productrow=mysqli_fetch_assoc($productresult)){
             // Access the product data using array keys
             // var_dump($productrow);
@@ -37,20 +43,42 @@ include 'include/navbar.php';
             // $description = $row['Description1'];
             // echo $description;
             // echo $category_id;
-    ?>
-        <div class="card product-card" style="width: 18rem;">
-  <img class="card-img-top product-img" src="images\product\<?php echo $productrow['Image1']; ?>" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title"><?php echo $productrow['Title']; ?></h4>
-    <p class="card-text"><?php echo $productrow['Description1']; ?></p>
-     </div>
-</div>
-    <?php
+            // $ins = ($ins==3) ? 1 : $ins + 1 ;
+            // if($ins==1){
+            //     echo '
+            //     <div class="row row-cols-3">';
+            // }
+            echo "
+            <a href='product.php?proid=".$productrow['ProductID']."&proname=". $productrow['Title']."' class='col product-card'>
+       
+            <img class='card-img-top product-img' src='images/product/". $productrow['Image1'] ."' alt='Card image cap'>
+            <div class='card-body'>
+                <h4 class='card-title'>". $productrow['Title']."</h4>
+                <p class='card-text'>". $productrow['Description1'] ."</p>
+            </div>
+        
+        </a>";
+            // if($ins==3)
+            // {
+            //     echo '</div>';
+            // }
         }
+        // if($ins==3)
+        // {
+            // echo '</div>';
+        // }/
+        // if($ins==1 || $ins==2)
+        // {
+            echo '
+            </div>
+            </div>
+            ';
+        // }
     }
     else
     {
-        echo "No Product there";
+        echo '
+        <h1 class="display-1 text-center my-5 text-secondary text-wrap">Product is not available</h1>';
     }
     ?>
                     <?php

@@ -2,6 +2,9 @@
 include 'include/session.php';
 include 'include/header.php';
 include 'include/navbar.php';
+
+
+// sign up 
 if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['signup']))
 {
 	$username = $_POST['username'];
@@ -9,6 +12,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['signup']))
 	$email= $_POST['email'];
 	$password=$_POST["password"];
 	$cpassword=$_POST["cpassword"];
+	$role=0;
 
 	if($password==$cpassword)
 	{
@@ -22,7 +26,8 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['signup']))
 				$num=mysqli_num_rows($existemail);
 				if($num==0)	
 				{
-					$sql="INSERT INTO `user` (`Name`, `Email`, `Phone`, `Password`, `DateJoined`) VALUES ('$username', '$email', '$phone', '$password', CURRENT_DATE())";
+					$password=password_hash($password, PASSWORD_DEFAULT);
+					$sql="INSERT INTO `user` (`Name`, `Email`, `Phone`, `Password`,`UserRole`, `DateJoined`) VALUES ('$username', '$email', '$phone', '$password','$role', CURRENT_DATE())";
 					$result=mysqli_query($conn,$sql);
 					if($result)
 					{
@@ -51,37 +56,68 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['signup']))
 	}
 
 }
+
+// login
 if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['login']))
 {	
 	try
 	{
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	$sqlemail="SELECT * FROM `user` WHERE `Email` LIKE '$email' AND `Password` LIKE '$password'";
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+	$sqlemail="SELECT * FROM `user` WHERE `Email` LIKE '$email'";
 	$result=mysqli_query($conn,$sqlemail);
-	$num=mysqli_num_rows($result);
+	$num = mysqli_num_rows($result);
 	if($num==1)
 	{
-		$row=mysqli_fetch_assoc($result);
-        $_SESSION['user_id']=$row['UserID'];
-        $_SESSION['user_name']=$row['Name'];
-        $_SESSION['user_email']=$row['Email'];
-		$_SESSION['user_phone']=$row['Phone'];
-		// echo "<script>
-		// window.location.href = 'index.php';
-		// </script>";
-		$_SESSION['loggedin'] = true;
+		while($row=mysqli_fetch_assoc($result))
+		{
+			if(password_verify($password,$row['Password']))
+			{
+				// $_SESSION['user_id']=$row['UserID'];
+				// $_SESSION['user_name']=$row['Name'];
+				// $_SESSION['user_phone']=$row['Phone'];
+				// echo "<script>
+				// window.location.href = 'index.php';
+				// </script>";
+				if($row['UserRole']==0)
+				{
+					$_SESSION['loggedin'] = true;
+					$_SESSION['user_email']=$row['Email'];
+					
+					$message="You have successfully logged in ";
+				$_SESSION['message']=$message;
+				}
+				else
+				{
+					$_SESSION['admin'] = true;
+					$_SESSION['login'] = true;
+					
+					$_SESSION['admin_id']=$row['UserID'];
+					$message="admin successfully logged in ";
+				$_SESSION['message']=$message;
+					
+				}
+				
+				// $message="You have successfully logged in ";
+				// $_SESSION['message']=$message;
+			}
+			else
+			{
+				$message="Inviled password";
+				$_SESSION['message']=$message;
+			
+				throw new Exception("Invalid values");
+			}
+		}
 		
-		$message="You have successfully logged in ";
-		$_SESSION['message']=$message;
 	}
 	else
-	{
-		$message="Inviled values";
-		$_SESSION['message']=$message;
-		
-		throw new Exception("Invalid values");
-	}
+		{
+			$message="Inviled values";
+			$_SESSION['message']=$message;
+			
+			throw new Exception("Invalid values");
+		}
 }
 catch(Exception $e)
 {
@@ -129,6 +165,29 @@ const alertclose = document.getElementById("login-close");
 	setTimeout(function() {
         loginalert.style.display = "none";
 		window.location.href = "index.php";
+	}, 3000);
+	</script>';
+	
+
+}
+if(isset($_SESSION['admin']))
+{
+	unset($_SESSION['message']);
+	echo '<div class="login-alert" id="login-alert">
+	<div class="alert-body">
+	<button id="login-close">&times;</button>	
+	<span><h3>'.$message.'</h3></span>
+	</div>
+
+</div>
+<script>const loginalert = document.getElementById("login-alert");
+const alertclose = document.getElementById("login-close");
+  alertclose.addEventListener("click", () => {
+	  loginalert.style.display = "none";
+  });
+	setTimeout(function() {
+        loginalert.style.display = "none";
+		window.location.href = "admin/dashboard.php";
 	}, 3000);
 	</script>';
 	
@@ -208,6 +267,7 @@ echo '<div class="section">
 	</div>';
 	?>
 	
+
 	<script>
 		const checkbox = document.getElementById('reg-log');
 const check = document.getElementById('check');
@@ -221,3 +281,6 @@ check.addEventListener('click', () => {
         
 //       }, 3100);
 	</script>
+<?php
+include 'include/script.php';
+?>

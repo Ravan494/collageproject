@@ -49,8 +49,10 @@
       display: block;
       padding: 10px 15px;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: all 1s ease;
       box-sizing: border-box;
+      border: 2px solid transparent;
+
     }
     .sidebar a:hover {
     border: 2px solid gold;

@@ -4,7 +4,7 @@ include 'include/header.php';
 include 'include/navbar.php';
 
 ?>
-<div class="about-main">
+    <div class="about-main">
         <div class="about-contant">
             <!-- <h4 class="heading">Hi , It's Me</h4> -->
             <h2 class="main-head">I'm <span class="ab-head-color"> RENT IT</span></h2>
@@ -30,7 +30,7 @@ include 'include/navbar.php';
     <!-- End About First Contant  -->
 
     <!-- Start Second Contant   -->
-    <div class="about-main-second">
+    <div class="about-main about-second">
         <div class="about-contant">
             <h4 class="heading-sec">ABOUT <span class="ab-sec-head-co"> Me</span></h4>
             <!-- <h2 class="main-head">Helping Business Successed through the power of video</h2> -->
@@ -47,7 +47,7 @@ include 'include/navbar.php';
         </div>
 
 
-        <div class="about-img-sec">
+        <div class="about-img">
             <img src="images\dddw-min.png" alt="" class="A-first">
             <img src="images\ddd-min.png" alt="" class="B-second">
            
@@ -63,7 +63,7 @@ include 'include/navbar.php';
 
     <h2 class="cards-heading">Our <span class="sp-services"> Services</span></h2>
 
-    <div class="main-cards">
+    <div class="main-cards my-5">
 
 
 
@@ -99,73 +99,6 @@ include 'include/navbar.php';
     </div>
     <!-- End Cards  -->
 
-
-    <!-- Start Testimonials  -->
-
-    <h2 class="test-head"> Our <span class="tes-head-co">Testimonials</span></h2>
-
-
-    <div class="quotes page-width">
-        <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="0" aria-hidden="false"
-            tabindex="-1">
-            <blockquote class="quotes-slider__text text-left">
-                <span class="quote-icon">
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote"
-                        viewBox="0 0 41 35">
-                        <path
-                            d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
-                        </path>
-                    </svg>
-                </span>
-
-                <div class="content">
-                    <p>"Our services are top-notch! Reliable, efficient, and customer-oriented. Experience the best with
-                        [RENT IT] today!"
-                    </p>
-                </div>
-                <cite>Bhawna Arora</cite>
-            </blockquote>
-        </div>
-
-        <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="1" aria-hidden="false"
-            tabindex="-1">
-            <blockquote class="quotes-slider__text text-left">
-                <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation"
-                        class="icon icon-quote" viewBox="0 0 41 35">
-                        <path
-                            d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
-                        </path>
-                    </svg>
-                </span>
-
-                <div class="content">
-                    <p>"Best rental experience ever! Great prices, excellent service, and highly recommended. [RENT IT]
-                        rocks!"s
-                    </p>
-                </div>
-                <cite>Jashwant Singh</cite>
-            </blockquote>
-        </div>
-
-        <div class="quotes-slide slideshow__slide--active" data-slider-slide-index="2" aria-hidden="false"
-            tabindex="-1">
-            <blockquote class="quotes-slider__text text-left">
-                <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation"
-                        class="icon icon-quote" viewBox="0 0 41 35">
-                        <path
-                            d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z">
-                        </path>
-                    </svg>
-                </span>
-                <div class="content">
-                    "Exceptional products! High quality, durable, and surpassed all my expectations. [RENT IT] is
-                    amazing!"</p>
-                </div>
-                <cite>Sheya Rathore</cite>
-            </blockquote>
-        </div>
-
-    </div>
 
     <?php
 

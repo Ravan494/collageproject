@@ -1046,6 +1046,21 @@ height:auto;
 {
   width: 50%;
 }
+
+.box-body.row.d-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.userdata .row
+{
+  flex-direction: row;
+}
+.userdata h4
+{
+  font-size: 18px;
+}
 }
 
 

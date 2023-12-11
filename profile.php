@@ -31,7 +31,7 @@ if (!isset($_SESSION['loggedin']))
 	        			// }
 	        		?>
 	        		<div class="box box-solid">
-	        			<div class="box-body row">
+	        			<div class="box-body row d-flex">
 	        				<div class="col">
 	        					<!-- <img src="<?php //echo (!empty($user['photo'])) ? 'images/'.$user['photo'] : 'images/profile.jpg'; ?>" width="100%"> -->
 	        					<img class="userimg" src="images/profile/profile.jpg">
